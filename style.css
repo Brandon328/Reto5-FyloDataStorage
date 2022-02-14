@@ -114,20 +114,16 @@ main .container {
 
 #progress-bar {
   width: 96%;
+  height: 16px;
   background-color: var(--very-dark-blue);
   margin: 12px 0;
-  -webkit-appearance: none;
-}
-
-#progress-bar::-webkit-progress-bar {
-  background-color: var(--very-dark-blue);
-}
-
-#progress-bar::-webkit-progress-inner-element {
   border-radius: 12px;
 }
 
-#progress-bar::-webkit-progress-value {
+#progress-bar .progress-value {
+  width: 75%;
+  height: 100%;
+  border-radius: 12px;
   /* fallback for old browsers */
   background: var(--dark-pink);
 
@@ -137,9 +133,19 @@ main .container {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right, var(--pink), var(--dark-pink));
 
-  border-radius: 12px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
+
+#progress-bar .progress-value .progress-circle {
+  background-color: white;
+  height: 12px;
+  width: 12px;
+  margin-inline-end: 2px;
+  border-radius: 50%;
+}
 
 .container .progress-bar-container label:nth-child(3) {
   display: flex;
